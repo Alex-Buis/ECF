@@ -12,6 +12,7 @@
                 <p class="my-3">{{ $matelas->marque }}</p>
                 <p class="text-sm">Longueur : {{ $matelas->longueur }} x {{ $matelas->largeur }} </p>
                 <p> Prix : {{ $matelas->prix }} €</p>
+            </div>
             {{-- <p>Sortie: {{ $list->released_at }}</p>
             @endif
             @if ($list->category_id)

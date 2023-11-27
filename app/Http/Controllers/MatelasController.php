@@ -19,22 +19,24 @@ class MatelasController extends Controller
     }
     public function store(Request $request)
     {
-
-    $request->validate([
-        'title' => 'required|min:2',
-        'marque' => 'required|min:2',
-        'longueur' => 'required|integer|min:1',
-        'image'=> 'required|url',
-    ]);
-
+        // dd('coucou22');
+    //     $request->validate([
+    //     'title' => 'required|min:2',
+    //     'marque' => 'required|min:2',
+    //     'longueur' => 'required|integer|min:1',
+    //     'image'=> 'required|url',
+    // ]);
+    // dd('coucou29');
     $matelas = new Matela();
     $matelas->title = $request->title;
     $matelas->marque = $request->marque;
     $matelas->longueur = $request->longueur;
+    $matelas->largeur = $request->largeur;
     $matelas->cover = $request-> cover;
+    $matelas->prix = $request->prix;
     $matelas->save();
 
-    return redirect('matelas/index');
+    return redirect('index');
     }
     public function show($id)
     {
@@ -48,22 +50,26 @@ class MatelasController extends Controller
     {
         return view('edit');
     }
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        $matelas = Matela::findOrFail($id);
-    $request->validate([
-        'title' => 'required|min:2',
-        'marque' => 'required|min:10',
-        'longueur' => 'required|integer|min:1',
-        'image'=> 'required|url',
-    ]);
+        // dd('coucou22');
+    //     $request->validate([
+    //     'title' => 'required|min:2',
+    //     'marque' => 'required|min:2',
+    //     'longueur' => 'required|integer|min:1',
+    //     'image'=> 'required|url',
+    // ]);
+    // dd('coucou29');
+    $matelas = Matela::findOrFail($id);
     $matelas->title = $request->title;
     $matelas->marque = $request->marque;
     $matelas->longueur = $request->longueur;
+    $matelas->largeur = $request->largeur;
     $matelas->cover = $request-> cover;
+    $matelas->prix = $request->prix;
     $matelas->save();
 
-    return redirect('matelas/index');
+    return redirect('index');
     }
 
     public function destroy($id)
@@ -72,6 +78,6 @@ class MatelasController extends Controller
 
         Matela::destroy($id);
         
-        return redirect('matelas/index');
+        return redirect('index');
     }
 }

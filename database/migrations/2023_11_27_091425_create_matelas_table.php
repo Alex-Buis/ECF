@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('marque');
             $table->integer('longueur');
-            $table->integer('largeur');
+            $table->integer('largeur')->nullable();
             $table->integer('prix');
             $table->integer('discount')->nullable();
             $table->string('cover');
