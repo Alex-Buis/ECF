@@ -17,7 +17,8 @@
                 <div class="flex justify-center">
                     <h3 class="text-sm font-bold">{{ $matela->title }}</h3>
                     <h3 class="mx-2">{{ $matela->longueur }} x {{ $matela->largeur }}</h3>
-                    <h3 class="text-sm font-bold">{{ $matela->prix }} €</h3>
+                    <h3 class="text-sm font-bold line-through">{{ $matela->prix }} €</h3>
+                    <h3 class="text-sm font-bold">{{ $matela->prix * (1 - $matela->discount / 100) }} €</h3>
                 </div>
                     </a>
             

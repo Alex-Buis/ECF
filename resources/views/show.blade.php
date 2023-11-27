@@ -11,7 +11,8 @@
                 <h1 class="text-4xl">{{ $matelas->title }}</h1>
                 <p class="my-3">{{ $matelas->marque }}</p>
                 <p class="text-sm">Longueur : {{ $matelas->longueur }} x {{ $matelas->largeur }} </p>
-                <p> Prix : {{ $matelas->prix }} €</p>
+                <h3 class="text-sm font-bold line-through">{{ $matelas->prix }} €</h3>
+                <h3 class="text-sm font-bold">{{ $matelas->prix * (1 - $matelas->discount / 100) }} €</h3>
             </div>
             {{-- <p>Sortie: {{ $list->released_at }}</p>
             @endif
